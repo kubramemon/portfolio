@@ -17,4 +17,4 @@ To run this project locally, simply clone the repository and open `index.html` i
 
 ## License
 
-This project is private and confidential. 
+This project is private and confidential.
