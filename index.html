@@ -878,7 +878,23 @@
       </div>
 
     </section>/Faq Section -->
-
+<!-- Popup Alert -->
+<div id="thank-you-alert" style="
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #28a745;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 18px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+">
+  ✅ Your message has been sent successfully!
+</div>
     <!-- Contact Section -->
     <section id="contact" class="contact section light-background">
 
@@ -978,6 +994,37 @@
     </div>
 
   </footer>
+              <script>
+  const form = document.getElementById('contact-form');
+  const alertBox = document.getElementById('thank-you-alert');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // stop page reload
+
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // Show success alert
+        alertBox.style.display = 'block';
+        form.reset();
+
+        setTimeout(() => {
+          alertBox.style.display = 'none';
+        }, 5000); // hide after 5 seconds
+      } else {
+        alert('Oops! Something went wrong.');
+      }
+    }).catch(error => {
+      alert('Oops! Something went wrong.');
+    });
+  });
+</script>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
