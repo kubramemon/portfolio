@@ -1142,6 +1142,17 @@ section,
   }
 
 }
+/* About Section CTA Buttons */
+#about .cta-buttons .btn-outline {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+#about .cta-buttons .btn-outline:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
 
 /*--------------------------------------------------------------
 # Skills Section
