@@ -915,145 +915,232 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about .about-image {
+/* =====================================================
+   ABOUT SECTION - SQA PORTFOLIO
+===================================================== */
+
+.about-section {
   position: relative;
 }
 
-.about .about-image img {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  height: 400px;
-  width: 80%;
-  margin-left: 100px;
+.about .section-title p {
+  max-width: 750px;
+  margin: 0 auto;
 }
+
+/* About Image */
+.about .about-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
 .about .about-image img {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: auto;
-  max-width: 600px; /* optional, to limit how big it can get */
-  margin: 0 auto;   /* centers image horizontally */
-  display: block;   /* required for margin auto to work */
-  border-radius: 10px; /* optional: smooth corners */
-}
-
-
-.about .about-content {
-  padding-left: 2rem;
-}
-
-@media (max-width: 991.98px) {
-  .about .about-content {
-    padding-left: 0;
-    margin-top: 3rem;
-  }
-}
-
-.about .about-content .subtitle {
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: var(--accent-color);
-  margin-bottom: 1rem;
   display: block;
+  transition: transform 0.5s ease;
 }
 
-.about .about-content h2 {
-  font-size: 2rem;
+.about .about-image:hover img {
+  transform: scale(1.03);
+}
+
+
+/* About Content */
+.about-content {
+  padding-left: 25px;
+}
+
+.about-content .subtitle {
+  display: inline-block;
+  color: var(--accent-color);
+  font-size: 14px;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-.about .about-content .lead {
-  font-size: 1.1rem;
-  color: color-mix(in srgb, var(--default-color), transparent 25%);
+.about-content h2 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  color: var(--heading-color);
 }
 
-.about .personal-info {
-  margin-top: 2rem;
-  padding: 2rem;
-  background-color: var(--surface-color);
-  border-radius: 1rem;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+.about-content p {
+  color: var(--default-color);
+  font-size: 16px;
+  line-height: 1.8;
 }
 
-.about .personal-info .info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.about-content .lead {
+  font-size: 18px;
+  line-height: 1.7;
 }
 
-.about .personal-info .info-item .label {
-  font-size: 0.875rem;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+.about-content strong {
+  font-weight: 700;
+  color: var(--heading-color);
 }
 
-.about .personal-info .info-item .value {
+
+/* =====================================================
+   ABOUT INFO BOXES
+===================================================== */
+
+.about-content .info-item {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+  border-radius: 12px;
+  padding: 16px 18px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.about-content .info-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-color: var(--accent-color);
+}
+
+.about-content .info-item .label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 6px;
+}
+
+.about-content .info-item .label i {
+  font-size: 15px;
+}
+
+.about-content .info-item .value {
+  display: block;
+  font-size: 15px;
   font-weight: 600;
   color: var(--heading-color);
 }
 
-.about .signature {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
 
-.about .signature .signature-image {
-  max-width: 150px;
-}
+/* =====================================================
+   QA SKILLS BADGES
+===================================================== */
 
-.about .signature .signature-info h4 {
-  font-size: 1.25rem;
-  margin-bottom: 0.25rem;
-}
-
-.about .signature .signature-info p {
-  font-size: 0.875rem;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  margin: 0;
-}
-/* Button Styling */
-.about-section .cta-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-
-@media (max-width: 576px) {
-  .about-section .cta-buttons {
-    flex-direction: column;
-  }
-}
-
-.about-section .cta-buttons .btn {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+.about-content .badge {
+  padding: 9px 14px;
+  font-size: 13px;
   font-weight: 500;
-  border-radius: 50px;
+  border-radius: 30px;
+  background: var(--accent-color) !important;
   transition: all 0.3s ease;
 }
 
-.about-section .cta-buttons .btn.btn-primary {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: var(--contrast-color);
+.about-content .badge:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
 }
 
-.about-section .cta-buttons .btn.btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
-  border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+
+/* QA Skills Heading */
+.about-content h5 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+
+/* =====================================================
+   ABOUT BUTTONS
+===================================================== */
+
+.about-content .btn {
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.about-content .btn:hover {
   transform: translateY(-2px);
 }
 
-.about-section .cta-buttons .btn.btn-outline {
-  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
-  color: var(--accent-color);
-  background: transparent;
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 991px) {
+
+  .about-content {
+    padding-left: 0;
+    margin-top: 35px;
+  }
+
+  .about-content h2 {
+    font-size: 30px;
+  }
+
+  .about .about-image {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
 
-.about-section .cta-buttons .btn.btn-outline:hover {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  transform: translateY(-2px);
+
+@media (max-width: 767px) {
+
+  .about {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .about-content h2 {
+    font-size: 27px;
+  }
+
+  .about-content .lead {
+    font-size: 16px;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .about-content .info-item {
+    padding: 14px;
+  }
+
+  .about-content .badge {
+    font-size: 12px;
+    padding: 8px 11px;
+  }
+
+  .about-content .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+@media (max-width: 575px) {
+
+  .about-content h2 {
+    font-size: 25px;
+  }
+
+  .about-content .subtitle {
+    font-size: 12px;
+  }
+
+  .about-content .info-item .value {
+    font-size: 14px;
+  }
+
 }
 
 /*--------------------------------------------------------------
