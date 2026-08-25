@@ -1153,6 +1153,23 @@ section,
   background: var(--accent-color);
   color: #fff;
 }
+/* Resume Button */
+#about .resume-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid #f27522;
+  background: transparent;
+  color: #f27522;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#about .resume-btn:hover {
+  background: #f27522;
+  color: #ffffff;
+}
 
 /*--------------------------------------------------------------
 # Skills Section
